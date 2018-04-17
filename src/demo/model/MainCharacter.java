@@ -1,130 +1,174 @@
 package demo.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.image.Image;
+
+import java.util.List;
 
 public class MainCharacter {
 
-    private IntegerProperty attack;
-    private IntegerProperty defense;
-    private Image characterHeadImage;
-    private Image characterBodyImage;
-    private Image characterLegsImage;
-    private Image characterBootsImage;
-    private Image characterHandsImage;
-    private Image characterShieldImage;
-    private Image characterSwordImage;
-    private Image characterFirstBracerImage;
-    private Image characterSecondBracerImage;
+    private int attack;
+    private int defense;
+
+    private Weapon helmet;
+    private Weapon armor;
+    private Weapon pants;
+    private Weapon boots;
+    private Weapon shield;
+    private Weapon gloves;
+    private Weapon sword;
+    private Weapon bracer1;
+    private Weapon bracer2;
+
+    private static final Weapon DEFAULT_HELMET = new Weapon("Default", 0,0, WeaponType.HELMET, new Image("file:../resources/images/characterDefaultImages/head.jpg"));
+    private static final Weapon DEFAULT_ARMOR = new Weapon("Default", 0,0, WeaponType.ARMOR, new Image("file:../resources/images/characterDefaultImages/body.jpg"));
+    private static final Weapon DEFAULT_PANTS = new Weapon("Default", 0,0, WeaponType.PANTS, new Image("file:../resources/images/characterDefaultImages/legs.jpg"));
+    private static final Weapon DEFAULT_BOOTS = new Weapon("Default", 0,0, WeaponType.BOOTS, new Image("file:../resources/images/characterDefaultImages/boots.jpg"));
+    private static final Weapon DEFAULT_SHIELD = new Weapon("Default", 0,0, WeaponType.SHIELD, new Image("file:../resources/images/characterDefaultImages/shield.jpg"));
+    private static final Weapon DEFAULT_GLOVES = new Weapon("Default", 0,0, WeaponType.GLOVES, new Image("file:../resources/images/characterDefaultImages/hands.jpg"));
+    private static final Weapon DEFAULT_SWORD = new Weapon("Default", 0,0, WeaponType.SWORD, new Image("file:../resources/images/characterDefaultImages/sword.jpg"));
+    private static final Weapon DEFAULT_BRACER_1 = new Weapon("Default", 0,0, WeaponType.BRACER, new Image("file:../resources/images/characterDefaultImages/bracer1.jpg"));
+    private static final Weapon DEFAULT_BRACER_2 = new Weapon("Default", 0,0, WeaponType.BRACER, new Image("file:../resources/images/characterDefaultImages/bracer2.jpg"));
+
+    private List<Weapon> inventory;
 
     public MainCharacter(){
-        attack = new SimpleIntegerProperty(23);
-        defense = new SimpleIntegerProperty(31);
-        characterBodyImage = new Image("file:../resources/images/body.jpg");
-        characterHeadImage = new Image("file:../resources/images/head.jpg");
-        characterLegsImage = new Image("file:../resources/images/legs.jpg");
-        characterBootsImage = new Image("file:../resources/images/boots.jpg");
-        characterHandsImage = new Image("file:../resources/images/hands.jpg");
-        characterShieldImage = new Image("file:../resources/images/shield.jpg");
-        characterSwordImage = new Image("file:../resources/images/sword.jpg");
-        characterFirstBracerImage = new Image("file:../resources/images/bracer1.jpg");
-        characterSecondBracerImage = new Image("file:../resources/images/bracer2.jpg");
+        attack = 23;
+        defense = 31;
+        helmet = DEFAULT_HELMET;
+        armor = DEFAULT_ARMOR;
+        pants = DEFAULT_PANTS;
+        boots = DEFAULT_BOOTS;
+        shield = DEFAULT_SHIELD;
+        gloves = DEFAULT_GLOVES;
+        sword = DEFAULT_SWORD;
+        bracer1 = DEFAULT_BRACER_1;
+        bracer2 = DEFAULT_BRACER_2;
     }
 
     public int getDefense() {
-        return defense.get();
-    }
-
-    public IntegerProperty defenseProperty() {
         return defense;
     }
 
     public void setDefense(int defense) {
-        this.defense.set(defense);
+        this.defense = defense;
     }
 
     public int getAttack() {
-        return attack.get();
-    }
-
-    public IntegerProperty attackProperty() {
         return attack;
     }
 
     public void setAttack(int attack) {
-        this.attack.set(attack);
+        this.attack = attack;
     }
 
-    public Image getCharacterHeadImage() {
-        return characterHeadImage;
+    public Weapon getHelmet() {
+        return helmet;
     }
 
-    public void setCharacterHeadImage(Image characterHeadImage) {
-        this.characterHeadImage = characterHeadImage;
+    public void setHelmet(Weapon helmet) {
+        this.helmet = helmet;
     }
 
-    public Image getCharacterBodyImage() {
-        return characterBodyImage;
+    public Weapon getArmor() {
+        return armor;
     }
 
-    public void setCharacterBodyImage(Image characterBodyImage) {
-        this.characterBodyImage = characterBodyImage;
+    public void setArmor(Weapon armor) {
+        this.armor = armor;
     }
 
-    public Image getCharacterLegsImage() {
-        return characterLegsImage;
+    public Weapon getPants() {
+        return pants;
     }
 
-    public void setCharacterLegsImage(Image characterLegsImage) {
-        this.characterLegsImage = characterLegsImage;
+    public void setPants(Weapon pants) {
+        this.pants = pants;
     }
 
-    public Image getCharacterHandsImage() {
-        return characterHandsImage;
+    public Weapon getBoots() {
+        return boots;
     }
 
-    public void setCharacterHandsImage(Image characterHandsImage) {
-        this.characterHandsImage = characterHandsImage;
+    public void setBoots(Weapon boots) {
+        this.boots = boots;
     }
 
-    public Image getCharacterShieldImage() {
-        return characterShieldImage;
+    public Weapon getShield() {
+        return shield;
     }
 
-    public void setCharacterShieldImage(Image characterShieldImage) {
-        this.characterShieldImage = characterShieldImage;
+    public void setShield(Weapon shield) {
+        this.shield = shield;
     }
 
-    public Image getCharacterSwordImage() {
-        return characterSwordImage;
+    public Weapon getGloves() {
+        return gloves;
     }
 
-    public void setCharacterSwordImage(Image characterSwordImage) {
-        this.characterSwordImage = characterSwordImage;
+    public void setGloves(Weapon gloves) {
+        this.gloves = gloves;
     }
 
-    public Image getCharacterFirstBracerImage() {
-        return characterFirstBracerImage;
+    public Weapon getSword() {
+        return sword;
     }
 
-    public void setCharacterFirstBracerImage(Image characterFirstBracerImage) {
-        this.characterFirstBracerImage = characterFirstBracerImage;
+    public void setSword(Weapon sword) {
+        this.sword = sword;
     }
 
-    public Image getCharacterSecondBracerImage() {
-        return characterSecondBracerImage;
+    public Weapon getBracer1() {
+        return bracer1;
     }
 
-    public void setCharacterSecondBracerImage(Image characterSecondBracerImage) {
-        this.characterSecondBracerImage = characterSecondBracerImage;
+    public void setBracer1(Weapon bracer1) {
+        this.bracer1 = bracer1;
     }
 
-    public Image getCharacterBootsImage() {
-        return characterBootsImage;
+    public Weapon getBracer2() {
+        return bracer2;
     }
 
-    public void setCharacterBootsImage(Image characterBootsImage) {
-        this.characterBootsImage = characterBootsImage;
+    public void setBracer2(Weapon bracer2) {
+        this.bracer2 = bracer2;
+    }
+
+    /////////////////////////////////////////////////////////////
+    // Methods to set default weapons
+    ////////////////////////////////////////////////////////////
+    public void setHelmetByDefault(){
+        this.helmet = DEFAULT_HELMET;
+    }
+
+    public void setArmorByDefault(){
+        this.armor = DEFAULT_ARMOR;
+    }
+
+    public void setPantsByDefault(){
+        this.pants = DEFAULT_PANTS;
+    }
+
+    public void setBootsByDefault(){
+        this.boots = DEFAULT_BOOTS;
+    }
+
+    public void setGlovesByDefault(){
+        this.gloves = DEFAULT_GLOVES;
+    }
+
+    public void setShieldByDefault(){
+        this.shield = DEFAULT_SHIELD;
+    }
+
+    public void setSwordByDefault(){
+        this.sword = DEFAULT_SWORD;
+    }
+
+    public void setFirstBracerByDefault(){
+        this.bracer1 = DEFAULT_BRACER_1;
+    }
+
+    public void setSecondBracerByDefault(){
+        this.bracer2 = DEFAULT_BRACER_2;
     }
 }

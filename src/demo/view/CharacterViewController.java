@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 
 public class CharacterViewController {
 
+    private MainCharacter mainCharacter = new MainCharacter();
+
     @FXML
     private Label attack;
     @FXML
@@ -28,11 +30,11 @@ public class CharacterViewController {
      */
     @FXML
     private void initialize() {
-        attack.setText("Атака: " + String.valueOf(new MainCharacter().getAttack()));
-        defense.setText("Защита: " + String.valueOf(new MainCharacter().getDefense()));;
+        attack.setText("Атака: " + String.valueOf(mainCharacter.getAttack()));
+        defense.setText("Защита: " + String.valueOf(mainCharacter.getDefense()));;
     }
 
-    public void setMainApp(Main main) {
-        this.main = main;
-  }
+//    public void setMainApp(Main main) {
+//        this.main = main;
+//  }
 }

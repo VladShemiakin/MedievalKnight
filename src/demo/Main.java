@@ -50,8 +50,8 @@ public class Main extends Application {
             AnchorPane characterOverview = (AnchorPane) loader.load();
             rootLayout.setCenter(characterOverview);
 
-            CharacterViewController controller = loader.getController();
-            controller.setMainApp(this);
+//            CharacterViewController controller = loader.getController();
+//            controller.setMainApp(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
